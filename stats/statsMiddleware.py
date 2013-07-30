@@ -1,5 +1,7 @@
 from datetime import date
 
+from django.contrib.sites.models import get_current_site
+
 from stats.models import Stat
 
 
@@ -12,7 +14,7 @@ class statsMiddleware(object):
             referer = self._get_referer(request)
             Stat.objects.create(ip=ip, referer=referer,
                                 date=today,
-                                site=request.current_site)
+                                site=get_current_site(request))
 
     def _get_referer(self, request):
         return request.META.get('HTTP_REFERER', '')
