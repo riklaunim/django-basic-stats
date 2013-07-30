@@ -15,6 +15,7 @@ setup(
     version='0.1',
     maintainer="Piotr Malinski",
     maintainer_email="riklaunim@gmail.com",
+    include_package_data=True,
     install_requires=(
         'django',
     ),
