@@ -1,0 +1,16 @@
+{% load i18n %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+    <h2>{% trans "Statistics" %}</h2>
+    <ul>
+        <li><a href="{% url "unique-entries" %}">{% trans "Unique Entries" %}</a></li>
+        <li><a href="{% url "referers" %}">{% trans "Last Referers" %}</a></li>
+        <li><a href="{% url "google" %}">{% trans "Google search keywords" %}</a></li>
+        <li><a href="{% url "delete-stats-data" %}" onclick="return confirm('{% trans "Delete all data ?" %}')">{% trans "Delete Stat Data" %}</a></li>
+    </ul>
+    <h2>{% trans "Mobile" %}</h2>
+    <ul>
+        <li><a href="{% url "mobile-devices" %}">{% trans "Mobile stats" %}</a></li>
+    </ul>
+    </div>
+</div>

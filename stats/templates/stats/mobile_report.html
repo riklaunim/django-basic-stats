@@ -1,0 +1,57 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="content-main">
+<div class="module">
+<h2>{% trans "General" %}</h2>
+<ul>
+    <li><b>{% trans "Unique USER_AGENTs" %}</b>: {{ distinct_user_agents_count }}</li>
+    <li><b>{% trans "Entries total" %}</b>: {{ total_entries.all_entries }}</li>
+    <li><b>{% trans "iPad entries" %}</b>: {{ total_entries.ipad_entries }}</li>
+    <li><b>{% trans "iPhone entries" %}</b>: {{ total_entries.iphone_entries }}</li>
+    <li><b>{% trans "iPod entries" %}</b>: {{ total_entries.ipod_entries }}</li>
+    <li><b>{% trans "Android entries" %}</b>: {{ total_entries.android_entries }}</li>
+    <li><b>{% trans "S60 entries" %}</b>: {{ total_entries.s60_entries }}</li>
+    <li><b>{% trans "Bada entries" %}</b>: {{ total_entries.bada_entries }}</li>
+    <li><b>{% trans "Blackberry entries" %}</b>: {{ total_entries.blackberry_entries }}</li>
+</ul>
+</div><div class="module">
+<h2>{% trans "Android" %}</h2>
+<h3>{% trans "Browsers" %}</h3>
+<ul>
+    <li><b>Webkit</b>: {{ android_browsers.webkit }}</li>
+    <li><b>Opera</b>: {{ android_browsers.opera }}</li>
+    <li><b>Firefox</b>: {{ android_browsers.firefox }}</li>
+</ul>
+<h3>{% trans "Device types" %}</h3>
+<ul>
+    <li><b>{% trans "Phones" %}</b>: {{ android_devices.phones }} ({% trans "resolution below 640x480 / 480x640" %})</li>
+    <li><b>{% trans "Tablets" %}</b>: {{ android_devices.tablets }}</li>
+</ul>
+<h3>{% trans "System versions" %}</h3>
+<ul>
+    {% for version, hits in android_versions.items %}
+        <li><b>{{ version }}</b>: {{ hits }}</li>
+    {% endfor %}
+</ul>
+</div><div class="module">
+<h2>{% trans "Popular screen resolutions" %}</h2>
+<ul>
+    {% for entry in resolutions.all %}
+        <li><b>{{ entry.screen_width }}x{{ entry.screen_height }}</b>: {{ entry.wcount }}</li>
+    {% endfor %}
+</ul>
+<h2>{% trans "Popular resolutions for Android devices" %}</h2>
+<ul>
+    {% for entry in resolutions.android %}
+        <li><b>{{ entry.screen_width }}x{{ entry.screen_height }}</b>: {{ entry.wcount }}</li>
+    {% endfor %}
+</ul>
+</div></div>
+{% endblock %}
+
+
+{% block sidebar %}
+{% include "stats/partials/sidebar.html" %}
+{% endblock %}
