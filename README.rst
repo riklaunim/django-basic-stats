@@ -8,6 +8,7 @@ It also provides optional logging and statistics for mobile devices (user agent,
 
 Installation
 ------------
+- Run `pip install django-basic-stats`
 - Add 'stats', to INSTALLED_APPS
 - Add 'stats.statsMiddleware.statsMiddleware' to MIDDLEWARE_CLASSES
 - Add url(r'^stats/', include('stats.urls')) to your urlpatterns in urls.py
