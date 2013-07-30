@@ -11,7 +11,7 @@ setup(
     description=("django-basic-stats is a simple traffic statistics application. "
                  "It show latest referrer, google queried terms or overall hits count. "
                  "It also provides optional logging and statistics for mobile devices."),
-    long_description=read("README.md"),
+    long_description=read("README.rst"),
     version='0.1',
     maintainer="Piotr Malinski",
     maintainer_email="riklaunim@gmail.com",
