@@ -12,7 +12,7 @@ setup(
                  "It show latest referrer, google queried terms or overall hits count. "
                  "It also provides optional logging and statistics for mobile devices."),
     long_description=read("README.rst"),
-    version='0.1',
+    version='0.1.1',
     maintainer="Piotr Malinski",
     maintainer_email="riklaunim@gmail.com",
     include_package_data=True,
