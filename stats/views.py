@@ -141,7 +141,7 @@ class LatestReferersList(generic.ListView):
     template_name = "stats/referers.html"
 
     def get_queryset(self):
-        queryset = Stat.objects.order_by('-date').exclude(referer='')
+        queryset = Stat.objects.order_by('-id').exclude(referer='')
         queryset = queryset.exclude(referer__icontains='google')
         queryset = queryset.exclude(referer__icontains='yahoo')
         queryset = queryset.exclude(referer__icontains='msn.com')
