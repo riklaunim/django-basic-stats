@@ -5,6 +5,7 @@ class Stat(models.Model):
     ip = models.IPAddressField()
     referer = models.TextField(blank=True)
     date = models.DateField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
     site = models.ForeignKey('sites.Site')
 
     class Meta:
@@ -18,6 +19,7 @@ class Stat(models.Model):
 class Mobile(models.Model):
     ip = models.IPAddressField()
     date = models.DateField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
     user_agent = models.CharField(max_length=255)
     window_width = models.IntegerField(blank=True, null=True)
     window_height = models.IntegerField(blank=True, null=True)
