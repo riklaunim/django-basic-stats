@@ -10,9 +10,9 @@ Installation
 ------------
 - Run `pip install django-basic-stats`
 - Add 'stats', to INSTALLED_APPS
-- Add 'stats.statsMiddleware.statsMiddleware' to MIDDLEWARE_CLASSES
+- Add 'stats.middleware.StatsMiddleware' to MIDDLEWARE_CLASSES
 - Add url(r'^stats/', include('stats.urls')) to your urlpatterns in urls.py
-- Run "syncdb" or "migrate" if you are using South
+- Run "python manage.py migrate" to sync the database
 
 
 Enabling mobile device logging

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Stat(models.Model):
-    ip = models.IPAddressField()
+    ip = models.GenericIPAddressField()
     referer = models.TextField(blank=True)
     date = models.DateField(auto_now_add=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -17,7 +17,7 @@ class Stat(models.Model):
 
 
 class Mobile(models.Model):
-    ip = models.IPAddressField()
+    ip = models.GenericIPAddressField()
     date = models.DateField(auto_now_add=True)
     created = models.DateTimeField(auto_now_add=True)
     user_agent = models.CharField(max_length=255)

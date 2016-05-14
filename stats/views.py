@@ -8,10 +8,10 @@ from django.contrib.sites.models import Site
 from django.db.models import Q
 from django.db.models import Count
 from django.http import HttpResponse
-from django.utils.datastructures import SortedDict
+from collections import OrderedDict
 from django.views import generic
 
-from stats.models import *
+from stats.models import Stat, Mobile
 
 
 class MobileDevicesStatistics(generic.TemplateView):
@@ -73,9 +73,10 @@ class MobileDevicesStatistics(generic.TemplateView):
         return {'phones': phones, 'tablets': tablets}
 
     def _android_versions(self):
-        result = SortedDict()
+        result = OrderedDict()
         versions = ['android 2.1', 'android 2.2', 'android 2.3',
-                    'android 4.0', 'android 4.1', 'android 4.2', 'android 4.3']
+                    'android 4.0', 'android 4.1', 'android 4.2', 'android 4.3',
+                    'android 4.4', 'android 5.0', 'android 5.1', 'android 6.0']
         for version in versions:
             result[version] = self._device_entries(version).count()
         return result

@@ -3,14 +3,14 @@
     <div class="module" id="recent-actions-module">
     <h2>{% trans "Statistics" %}</h2>
     <ul>
-        <li><a href="{% url "unique-entries" %}">{% trans "Unique Entries" %}</a></li>
-        <li><a href="{% url "referers" %}">{% trans "Last Referers" %}</a></li>
-        <li><a href="{% url "google" %}">{% trans "Google search keywords" %}</a></li>
-        <li><a href="{% url "delete-stats-data" %}" onclick="return confirm('{% trans "Delete all data ?" %}')">{% trans "Delete Stat Data" %}</a></li>
+        <li><a href="{% url "stats-unique-entries" %}">{% trans "Unique Entries" %}</a></li>
+        <li><a href="{% url "stats-referers" %}">{% trans "Last referers" %}</a></li>
+        <li><a href="{% url "stats-google" %}">{% trans "Google search keywords" %}</a></li>
+        <li><a href="{% url "stats-delete-data" %}" onclick="return confirm('{% trans "Delete all data ?" %}')">{% trans "Delete Stat Data" %}</a></li>
     </ul>
     <h2>{% trans "Mobile" %}</h2>
     <ul>
-        <li><a href="{% url "mobile-devices" %}">{% trans "Mobile stats" %}</a></li>
+        <li><a href="{% url "stats-mobile-devices" %}">{% trans "Mobile stats" %}</a></li>
     </ul>
     </div>
 </div>
