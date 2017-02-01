@@ -41,7 +41,6 @@ class Migration(migrations.Migration):
                 ('ip', models.GenericIPAddressField()),
                 ('referer', models.TextField(blank=True)),
                 ('date', models.DateField(auto_now_add=True)),
-                ('created', models.DateTimeField(auto_now_add=True)),
                 ('site', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='sites.Site')),
             ],
             options={

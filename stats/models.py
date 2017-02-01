@@ -5,7 +5,6 @@ class Stat(models.Model):
     ip = models.GenericIPAddressField()
     referer = models.TextField(blank=True)
     date = models.DateField(auto_now_add=True)
-    created = models.DateTimeField(auto_now_add=True)
     site = models.ForeignKey('sites.Site')
 
     class Meta:
