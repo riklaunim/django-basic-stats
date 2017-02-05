@@ -1,13 +1,13 @@
-from datetime import date
-
-from django.contrib.sites.models import get_current_site
+# coding: utf-8
+from django.utils import timezone
+from django.contrib.sites.shortcuts import get_current_site
 
 from stats.models import Stat
 
 
-class statsMiddleware(object):
+class StatsMiddleware(object):
     def process_request(self, request):
-        today = date.today()
+        today = timezone.now().date()
         ip = self._get_ip(request)
         entry = Stat.objects.filter(ip=ip, date=today)
         if not entry.exists():
